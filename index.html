@@ -1,0 +1,143 @@
+{% extends "_base.html" %}
+
+{% block file_metadata %}
+  <meta name="title" content="Lessons (Version 3.0)" />
+  <meta name="subfile" content="intro.html" />
+  <meta name="subfile" content="py01.html" />
+  <meta name="subfile" content="py02.html" />
+  <meta name="subfile" content="py03.html" />
+  <meta name="subfile" content="debugging.html" />
+  <meta name="subfile" content="version.html" />
+  <meta name="subfile" content="py04.html" />
+  <meta name="subfile" content="imgproc.html" />
+  <meta name="subfile" content="shell01.html" />
+  <meta name="subfile" content="shell02.html" />
+  <meta name="subfile" content="build.html" />
+  <meta name="subfile" content="oop01.html" />
+  <meta name="subfile" content="oop02.html" />
+  <meta name="subfile" content="qa.html" />
+  <meta name="subfile" content="unit.html" />
+  <meta name="subfile" content="db.html" />
+  <meta name="subfile" content="re.html" />
+  <meta name="subfile" content="binary.html" />
+  <meta name="subfile" content="xml.html" />
+  <meta name="subfile" content="gui.html" />
+  <meta name="subfile" content="client.html" />
+  <meta name="subfile" content="server.html" />
+  <meta name="subfile" content="empirical.html" />
+  <meta name="subfile" content="lifecycle.html" />
+  <meta name="subfile" content="summary.html" />
+  <meta name="subfile" content="license.html" />
+  <meta name="subfile" content="ack.html" />
+  <meta name="subfile" content="bib.html" />
+{% endblock file_metadata %}
+
+{% block navhighlight %}{{navhighlight('lessons')}}{% endblock navhighlight %}
+
+{% block content %}
+
+  <p>
+    Software Carpentry is an intensive introduction to basic software development practices for scientists and engineers.
+    All of the material is open source:
+    it may be used freely by anyone for educational or commercial purposes.
+    To find out more, please check us out at
+    <a href="http://software-carpentry.org">http://software-carpentry.org</a>.
+  </p>
+
+  <p>
+    <strong>Note:</strong>
+    these notes are no longer maintained.
+    Please see <a href="{{root_path}}/4_0/index.html">Version 4.0</a>
+    for more recent material.
+  </p>
+
+  <div class="contents">
+    <h2>Contents</h2>
+    <ul>
+      {% for lesson in page.children %}
+        <li><a href="{{root_path}}/{{lesson.filename}}">{{lesson.title}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+<h2>Software</h2>
+
+<p>
+  These course materials currently use <a href="http://www.python.org/download/releases/2.5.4/">Python 2.5</a>
+  because some of the libraries that we rely on have not yet been updated
+  to work with <a href="http://www.python.org/download/releases/2.6.2/">Python 2.6</a>.
+  Our current plan is to bypass 2.6 entirely,
+  and move to <a href="http://www.python.org/download/releases/3.0.1/">Python 3.0</a>
+  as soon as the libraries we depend on have been ported.
+</p>
+
+<ul>
+  <li><strong>Mac OS X:</strong>
+    <ul>
+      <li><a href="http://www.python.org/download/releases/2.5.4/">Python 2.5</a> Note: if you are using Mac OS X 10.5 (Leopard), you must still install this version of Python, or the other installers listed below will not work.</li>
+      <li>X11 (from 'Optional programs' on your Mac OS X install disc); this may already be installed.</li>
+      <li><a href="http://www.syntevo.com/smartsvn/download.html?file=smartsvn/smartsvn-macosx-6_0_3.tar.gz">SmartSVN</a></li>
+      <li><a href="http://wingware.com/pub/wingide-personal/3.1.8/wingide-personal-3.1.8-1-i386.dmg">Wing IDE Personal Edition</a> (use <a href="http://wingware.com/pub/wingide-personal/3.1.8/wingide-personal-3.1.8-1-ppc.dmg">this installer</a> for PowerPC)</li>
+      <li><a href="http://pythonmac.org/packages/py25-fat/dmg/PIL-1.1.6-py2.5-macosx10.4-2007-05-18.dmg">Python Imaging Library 1.1.6</a></li>
+      <li><a href="http://www.pygame.org/ftp/pygame-1.8.1release-py2.5-macosx10.5.zip">PyGame</a></li>
+      <li><a href="http://www.pygame.org/ftp/pyobjc-1.4-py2.5-macosx10.4.mpkg.zip">PyObjC</a></li>
+      <li><a href="http://sourceforge.net/project/showfiles.php?group_id=1369&amp;package_id=175103">NumPy 1.3</a></li>
+      <li>Download and unzip PyGraphics2.0.pkg.zip and double-click to install the media tools.</li>
+      <li>nose
+        <ol>
+          <li>Install <a href="http://pypi.python.org/pypi/setuptools/" title="Python Package Index : setuptools 0.6c9">setuptools</a></li>
+          <li>Run Terminal.app (in /Applications/Utilities)</li>
+          <li>In a Terminal window, type <code>easy_install nose</code>.  (For this step to work, you must be connected to the internet.)</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Windows:</strong>
+    <ul>
+      <li><a href="http://www.python.org/download/releases/2.5.4/">Python 2.5</a></li>
+      <li><a href="http://www.syntevo.com/smartsvn/download.html?file=smartsvn/smartsvn-windows-x86-setup-jre-6_0_3.zip">SmartSVN</a> (with JRE---use <a href="http://www.syntevo.com/smartsvn/download.html?file=smartsvn/smartsvn-windows-x86-setup-nojre-6_0_3.zip">this installer</a> if you have JRE 1.4.1 or higher already installed)</li>
+      <li><a href="http://wingware.com/pub/wingide-personal/3.1.8/wingide-personal-3.1.8-1.exe">Wing IDE Personal Edition</a></li>
+      <li><a href="http://effbot.org/media/downloads/PIL-1.1.6.win32-py2.5.exe">Python Imaging Library 1.1.6</a></li>
+      <li><a href="http://www.pygame.org/ftp/pygame-1.8.1release.win32-py2.5.msi">PyGame</a></li>
+      <li><a href="http://sourceforge.net/project/showfiles.php?group_id=1369&amp;package_id=175103">NumPy 1.3 for Python 2.5</a></li>
+      <li>Download and double-click PyGraphics-2.0.win32.exe to install the media tools.</li>
+      <li>nose
+        <ol>
+          <li>Install <a href="http://pypi.python.org/packages/2.5/s/setuptools/setuptools-0.6c9.win32-py2.5.exe#md5=602d06054ec1165e995ae54ac30884d7">setuptools</a></li>
+          <li>Run DOS Command Prompt (Start -&gt; All Programs -&gt; Accessories -&gt; Command Prompt)</li>
+          <li>In DOS, type: <code>C:\Python25\Scripts\easy_install nose</code>.  (For this step to work, you must be connected to the internet)</li>
+        </ol>
+      </li>
+      <li><a href="http://cygwin.org/setup.exe">Cygwin</a> (a Unix emulation package for Windows).
+        <ol>
+        <li>Double-click the installer to run it.</li>
+        <li>Choose "Install from Internet".</li>
+        <li>Use "C:\cygwin" as the root directory.</li>
+        <li>Use any convenient directory as the Local Package Directory.</li>
+        <li>Use any convenient download site.</li>
+        <li>The default set of packages is all you need for this course, but you may find others useful for your own work.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Ubuntu/Debian Linux:</strong>
+    <ul>
+      <li><code>sudo apt-get install python-imaging python-imaging-tk python-pygame python-numpy python-setuptools</code></li>
+      <li><a href="http://www.syntevo.com/smartsvn/download.html?file=smartsvn/smartsvn-generic-6_0_3.tar.gz">SmartSVN</a></li>
+      <li><a href="http://wingware.com/pub/wingide-personal/3.1.8/wingide-personal3.1_3.1.8-1_i386.deb">Wing IDE Personal Edition</a> (use <a href="http://wingware.com/pub/wingide-personal/3.1.8/wingide-personal3.1-3.1.8-1.i386.rpm">this installer</a> if you prefer an RPM)</li>
+      <li>Download PyGraphics.tgz, open a shell, and then:
+        <ol>
+          <li><code>tar zxvf PyGraphics.tgz</code></li>
+          <li><code>cd</code> to the <code>cpython</code> subdirectory</li>
+          <li><code>sudo python setup.py install</code></li>
+        </ol>
+      </li>
+      <li>Install nose with <code>sudo easy_install nose</code></li>
+    </ul>
+  </li>
+</ul>
+
+{% endblock content %}
+
+</body>
+</html>
