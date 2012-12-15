@@ -148,9 +148,9 @@
   <li>To create a table, specify its name, and the names and types of its columns</li>
   </ul>
   <pre file="db/make-db.sql" section="create">CREATE TABLE Person(
-	Login		TEXT,
-	LastName	TEXT,
-	FirstName	TEXT
+        Login           TEXT,
+        LastName        TEXT,
+        FirstName       TEXT
 );
 </pre>
   <ul>
@@ -297,19 +297,19 @@ Time Travel|2|-1.5
   <li>Can (and should) specify such constraints explicitly, so that the DBMS can enforce them</li>
   </ul>
   <pre file="db/make-db-constraints.sql" section="create">CREATE TABLE Person(
-	Login		TEXT		NOT NULL,
-	LastName	TEXT	        NOT NULL,
-	FirstName	TEXT	        NOT NULL,
-	PRIMARY KEY (Login)
+        Login           TEXT            NOT NULL,
+        LastName        TEXT            NOT NULL,
+        FirstName       TEXT            NOT NULL,
+        PRIMARY KEY (Login)
 );
 </pre>
   <pre file="db/make-db-constraints.sql" section="experiment">CREATE TABLE Experiment(
-	ProjectId	INTEGER		NOT NULL,
-	ExperimentId	INTEGER		NOT NULL,
-	NumInvolved	INTEGER		NOT NULL,
-	ExperimentDate	DATE,
-	Hours		REAL		NOT NULL
-	CONSTRAINT Experiment_Key PRIMARY KEY (ProjectId, ExperimentId)
+        ProjectId       INTEGER         NOT NULL,
+        ExperimentId    INTEGER         NOT NULL,
+        NumInvolved     INTEGER         NOT NULL,
+        ExperimentDate  DATE,
+        Hours           REAL            NOT NULL
+        CONSTRAINT Experiment_Key PRIMARY KEY (ProjectId, ExperimentId)
 );
 </pre>
 </div>

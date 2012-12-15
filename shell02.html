@@ -8,8 +8,8 @@
 <div class="topic">
   <h2>1) Introduction</h2>
 <ul>
-	<li>In the first lecture we talked about three components of an OS for which the shell can act as a interface: files, processes, communication</li>
-	<li>We will first fill in a few pieces about files that we didn't have time to cover in the first lecture and focus this lecture around process management and communication</li>
+        <li>In the first lecture we talked about three components of an OS for which the shell can act as a interface: files, processes, communication</li>
+        <li>We will first fill in a few pieces about files that we didn't have time to cover in the first lecture and focus this lecture around process management and communication</li>
 </ul>
 </div>
 
@@ -59,19 +59,19 @@
       <li><code>ta*</code> does <em>not</em> find the <code>tabulate</code> command</li>
       </ul>
     </li>
-	</ul></li>
-	
-	<li><code>~</code> is not strictly a wild card, but it is a character with a special meaning
-		<ul>
-			<li>By itself it refers to the current user's home directory
-				<ul>
-					<li><code>cd ~</code> is the same as <code>cd $HOME</code></li>
-				</ul>
-			</li>
-			<li>As the prefix to a user name (E.g., <code>~reid</code>), it refers to that user's home directory
-			</li>
-		</ul>
-	</li>
+        </ul></li>
+        
+        <li><code>~</code> is not strictly a wild card, but it is a character with a special meaning
+                <ul>
+                        <li>By itself it refers to the current user's home directory
+                                <ul>
+                                        <li><code>cd ~</code> is the same as <code>cd $HOME</code></li>
+                                </ul>
+                        </li>
+                        <li>As the prefix to a user name (E.g., <code>~reid</code>), it refers to that user's home directory
+                        </li>
+                </ul>
+        </li>
     </ul>
 
 
@@ -409,64 +409,64 @@ $ sort -n words.tmp
 </div>
 
 <div class="topic">
-	<h2>16) Job control</h2>
-	<ul>
-	<li>A job is a program whose execution has been initiated by the user</li>	
-	<li>At any moment a process can be running or suspended</li>
-	<li>Foreground job:
-		<ul>
-			<li>a process that has control of the terminal</li>
-		</ul>
-	</li>
-	<li>Background job:
-		<ul>
-			<li>runs concurrently with the parent shell and does not take control of the keyboard</li>
-			<li>output may still appear in the shell</li>
-		</ul>
-	</li>
-	<li>Start a job in the background by appending <code>&amp;</code></li>
-	<li>Commands: 
-	<div id="tbl:shell02-jobcommands">
-	    <table>
-	      <tr>
-	        <td><code>^C</code></td>
-	        <td>Send the SIGTERM signal to the foreground process</td>
-	      </tr>
-	      <tr>
-	        <td><code>^Z</code></td>
-	        <td>Send the SIGSTOP signal to the foreground process</td>
-	      </tr>
-	      <tr>
-	        <td><code>jobs</code></td>
-	        <td>Display the status of active background jobs controlled by the shell.</td>
-	      </tr>
-	      <tr>
-	        <td><code>fg</code></td>
-	        <td>Change the first background job to the foreground</td>
-	      </tr>
-	      <tr>
-	        <td><code>bg</code></td>
-	        <td>Continue the suspended job in the background</td>
-	      </tr>
-	    </table>
-	    <p>Table 10.1: Job Commands</p>
-	</div>
-	</li>
-	</ul>
+        <h2>16) Job control</h2>
+        <ul>
+        <li>A job is a program whose execution has been initiated by the user</li>      
+        <li>At any moment a process can be running or suspended</li>
+        <li>Foreground job:
+                <ul>
+                        <li>a process that has control of the terminal</li>
+                </ul>
+        </li>
+        <li>Background job:
+                <ul>
+                        <li>runs concurrently with the parent shell and does not take control of the keyboard</li>
+                        <li>output may still appear in the shell</li>
+                </ul>
+        </li>
+        <li>Start a job in the background by appending <code>&amp;</code></li>
+        <li>Commands: 
+        <div id="tbl:shell02-jobcommands">
+            <table>
+              <tr>
+                <td><code>^C</code></td>
+                <td>Send the SIGTERM signal to the foreground process</td>
+              </tr>
+              <tr>
+                <td><code>^Z</code></td>
+                <td>Send the SIGSTOP signal to the foreground process</td>
+              </tr>
+              <tr>
+                <td><code>jobs</code></td>
+                <td>Display the status of active background jobs controlled by the shell.</td>
+              </tr>
+              <tr>
+                <td><code>fg</code></td>
+                <td>Change the first background job to the foreground</td>
+              </tr>
+              <tr>
+                <td><code>bg</code></td>
+                <td>Continue the suspended job in the background</td>
+              </tr>
+            </table>
+            <p>Table 10.1: Job Commands</p>
+        </div>
+        </li>
+        </ul>
 </div>
 
 <div class="topic">
-	<h2>17) grep</h2>
-	<ul>
-		<li>One of the most useful shell commands</li>
-		<li>Search for a word or pattern in a file or set of files</li>
-		<li>E.g., <code>grep reid /etc/passwd</code></li>
-		<li>Lots of useful options:
-			<li><code>-i</code> case-insensitive search</li>
-			<li><code>-r</code> recurse through subdirectories</li>
-			
-		</li>
-	</ul>
+        <h2>17) grep</h2>
+        <ul>
+                <li>One of the most useful shell commands</li>
+                <li>Search for a word or pattern in a file or set of files</li>
+                <li>E.g., <code>grep reid /etc/passwd</code></li>
+                <li>Lots of useful options:
+                        <li><code>-i</code> case-insensitive search</li>
+                        <li><code>-r</code> recurse through subdirectories</li>
+                        
+                </li>
+        </ul>
 </div>
 
 

@@ -120,7 +120,7 @@ Yield: 10.90
   <li>Put the following into a <a href="{{root_path}}/book/glossary.html#makefile" target="glo:makefile">Makefile</a> called <code>hello.mk</code>:</li>
   </ul>
   <pre file="build/hello.mk">hydroxyl_422.csv : hydroxyl_422.dat
-	dat2csv hydroxyl_422.dat &gt; hydroxyl_422.csv
+        dat2csv hydroxyl_422.dat &gt; hydroxyl_422.csv
 </pre>
   <ul>
   <li><em>Must</em> indent with a tab character: not eight spaces, or a mix of spaces and tabs
@@ -165,10 +165,10 @@ Yield: 10.90
   <li>Makefiles usually contain multiple rules</li>
    </ul>
   <pre file="build/double.mk">hydroxyl_422.csv : hydroxyl_422.dat
-	dat2csv hydroxyl_422.dat &gt; hydroxyl_422.csv
+        dat2csv hydroxyl_422.dat &gt; hydroxyl_422.csv
 
 methyl_422.csv : methyl_422.dat
-	dat2csv methyl_422.dat &gt; methyl_422.csv
+        dat2csv methyl_422.dat &gt; methyl_422.csv
 </pre>
   <ul>
   <li>When you run <code>make -f double.mk</code>, only <code>hydroxyl_422.csv</code> is compiled
@@ -195,10 +195,10 @@ methyl_422.csv : methyl_422.dat
   <pre file="build/phony.mk">all : hydroxyl_422.csv methyl_422.csv
 
 hydroxyl_422.csv : hydroxyl_422.dat
-	dat2csv hydroxyl_422.dat &gt; hydroxyl_422.csv
+        dat2csv hydroxyl_422.dat &gt; hydroxyl_422.csv
 
 methyl_422.csv : methyl_422.dat
-	dat2csv methyl_422.dat &gt; methyl_422.csv
+        dat2csv methyl_422.dat &gt; methyl_422.csv
 </pre>
   <ul>
   <li><code>make -f phony.mk all</code> now creates both <code>.csv</code> files</li>
@@ -320,13 +320,13 @@ methyl_422.csv : methyl_422.dat
   <pre file="build/auto.mk">all : hydroxyl_422.csv methyl_422.csv
 
 hydroxyl_422.csv : hydroxyl_422.dat
-	@dat2csv $&lt; &gt; $@
+        @dat2csv $&lt; &gt; $@
 
 methyl_422.csv : methyl_422.dat
-	@dat2csv $&lt; &gt; $@
+        @dat2csv $&lt; &gt; $@
 
 clean :
-	@rm -f *.csv
+        @rm -f *.csv
 </pre>
   <ul>
   <li>By default, Make echoes actions before executing them
@@ -355,10 +355,10 @@ clean :
   <pre file="build/rule.mk">all : hydroxyl_422.csv methyl_422.csv
 
 %.csv : %.dat
-	@dat2csv $&lt; &gt; $@
+        @dat2csv $&lt; &gt; $@
 
 clean :
-	@rm -f *.csv
+        @rm -f *.csv
 </pre>
   <ul>
   <li>The wildcard <code>&quot;%&quot;</code> represents the stem of the file's name in the target and prerequisites</li>
@@ -385,13 +385,13 @@ clean :
   <pre file="build/depend.mk">all : hydroxyl_all.csv methyl_all.csv
 
 %_all.csv : %_422.csv %_480.csv
-	summarize $^ &gt; $@
+        summarize $^ &gt; $@
 
 %.csv : %.dat dat2csv
-	dat2csv $&lt; &gt; $@
+        dat2csv $&lt; &gt; $@
 
 clean :
-	@rm -f *.csv
+        @rm -f *.csv
 </pre>
   <pre class="out" file="build/depend.out">dat2csv hydroxyl_422.dat &gt; hydroxyl_422.csv
 dat2csv hydroxyl_480.dat &gt; hydroxyl_480.csv
@@ -448,13 +448,13 @@ OUTPUT_DIR = /tmp
 all : ${OUTPUT_DIR}/hydroxyl_all.csv ${OUTPUT_DIR}/methyl_all.csv
 
 ${OUTPUT_DIR}/%_all.csv : ${OUTPUT_DIR}/%_422.csv ${OUTPUT_DIR}/%_480.csv
-	@summarize $^ &gt; $@
+        @summarize $^ &gt; $@
 
 ${OUTPUT_DIR}/%.csv : ${INPUT_DIR}/%.dat
-	@dat2csv $&lt; &gt; $@
+        @dat2csv $&lt; &gt; $@
 
 clean :
-	@rm -f *.csv
+        @rm -f *.csv
 </pre>
   <ul>
   <li>To get value, put a <code>&quot;$&quot;</code> in front of the name <em>and</em> parentheses or braces around it
@@ -498,7 +498,7 @@ clean :
   </ul>
   <pre file="build/env.mk">VAL = original
 echo :
-	@echo &quot;VAL is&quot; ${VAL}
+        @echo &quot;VAL is&quot; ${VAL}
 </pre>
   <pre class="in" file="build/env-1.cmd">$ make -f env.mk echo
 </pre>
@@ -532,13 +532,13 @@ SUMMARIES = $(addprefix ${OUTPUT_DIR}/,$(addsuffix _all.csv,${CHEMICALS}))
 all : ${SUMMARIES}
 
 ${OUTPUT_DIR}/%_all.csv : ${OUTPUT_DIR}/%_422.csv ${OUTPUT_DIR}/%_480.csv
-	@summarize $^ &gt; $@
+        @summarize $^ &gt; $@
 
 ${OUTPUT_DIR}/%.csv : ${INPUT_DIR}/%.dat
-	@dat2csv $&lt; &gt; $@
+        @dat2csv $&lt; &gt; $@
 
 clean :
-	@rm -f *.csv
+        @rm -f *.csv
 </pre>
 </div>
 
